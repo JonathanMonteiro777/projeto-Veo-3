@@ -1,29 +1,36 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Importa uma fonte moderna e limpa para títulos, ou você pode manter Bebas Neue */
 
-@font-face {
-    font-family: 'Android';
-    src: url('/D-010/fontes/idroid.otf') format('opentype');
-    font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
 
 :root {
---cor0: #c5ebd6;
---cor1: #83e1ad;
---cor2: #3ddc84;
---cor3: #2fa866;
---cor4: #1a5c37;
---cor5: #063d1e;
+    /* Nova paleta de cores inspirada em IA / Google: tons de azul, roxo, cinza */
+    --cor0: #e3e8f8;
+    /* Azul muito claro / quase branco (fundo de seções) */
+    --cor1: #bccae9;
+    /* Azul claro (fundo do body) */
+    --cor2: #6a8cda;
+    /* Azul médio (links, detalhes) */
+    --cor3: #3b60be;
+    /* Azul mais escuro (destaques, cabeçalho gradiente claro) */
+    --cor4: #2a4790;
+    /* Azul escuro (títulos secundários) */
+    --cor5: #15295c;
+    /* Azul muito escuro / quase marinho (texto principal, rodapé, cabeçalho gradiente escuro) */
 
---fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
---fonte-destaque: "Bebas Neue", 'cursive';
---fonte-Andorid: 'Android','cursive';
+    --fonte-padrao: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* Fonte mais moderna e limpa */
+    --fonte-destaque: "Oxanium", sans-serif;
+    /* Mantive Bebas Neue para o título principal, mas pode ser mudada */
+    --fonte-titulos-secundarios: 'Oxanium', sans-serif;
+    /* Para h2 e h3, pode ser a mesma do destaque ou outra */
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -32,64 +39,75 @@ body {
     font-family: var(--fonte-padrao);
 }
 
-a.esterno::after {
+a.externo::after {
     content: '\00a0\1F517';
+    /* Ícone de link externo */
 }
 
 header {
-    background-image: linear-gradient(to bottom, var(--cor3) , var(--cor5));
-    min-height: 150px;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    /* Gradiente de azul escuro */
+    min-height: 180px;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 50px;
 
 }
 
-header > h1 {
+header>h1 {
     color: white;
     font-family: var(--fonte-destaque);
-    font-size: 3em;
+    font-size: 3.8em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.539);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
-header > p {
+
+header>p {
     font-family: var(--fonte-padrao);
     font-weight: normal;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: white;
-    max-width: 500px;
+    max-width: 600px;
     margin: auto;
     padding-bottom: 40px;
-    padding-right: 10px;
-    padding-left: 10px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.539);
+    padding-right: 15px;
+    padding-left: 15px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 nav {
     background-color: var(--cor5);
+    /* Azul muito escuro */
     padding: 10px;
-    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.534);
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.4);
 }
-nav> a {
+
+nav>a {
     color: var(--cor1);
+    /* Azul claro */
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition-duration: 0.2s;
+    transition: background-color 0.2s, color 0.2s;
+    /* Shorthand para transition */
 }
-nav > a:hover {
+
+nav>a:hover {
     background-color: var(--cor3);
+    /* Azul mais escuro */
     color: var(--cor5);
+    /* Azul muito escuro */
 }
 
 main {
     min-width: 300px;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: auto;
     margin-bottom: 30px;
     padding: 20px;
     background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.513);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra mais suave */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
@@ -97,20 +115,38 @@ main {
 
 main h1 {
     color: var(--cor5);
-    font-family: var(--fonte-Andorid);
+    font-family: var(--fonte-titulos-secundarios);
     font-weight: normal;
-    font-size: 1.8em;
+    font-size: 2.2em;
+    margin-bottom: 15px;
 }
+
 main h2 {
-    font-family: var(--fonte-Andorid);
+    font-family: var(--fonte-titulos-secundarios);
     font-weight: normal;
     color: var(--cor4);
-    font-size: 1.4em;
+    /* Azul escuro */
+    font-size: 1.6em;
+    /* Tamanho ajustado */
     background-image: linear-gradient(to right, var(--cor0), transparent);
+    padding-left: 8px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    /* Espaço depois do título */
+}
+
+
+main h3 {
+    font-family: var(--fonte-padrao);
+    color: var(--cor5);
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
 }
 
 main p {
-    margin: 15px 0px 15px 0px;
+    margin: 15px 0px;
     text-align: justify;
     text-indent: 30px;
     font-size: 1.1em;
@@ -119,9 +155,10 @@ main p {
 
 main strong {
     color: var(--cor5);
-    font: bold;
-    padding: 2px 5px;
-
+    font-weight: bold;
+    padding: 0 3px;
+    background-color: var(--cor0);
+    border-radius: 3px;
 }
 
 main a {
@@ -130,69 +167,109 @@ main a {
     font-weight: bold;
     color: var(--cor5);
     padding: 2px 5px;
+    border-radius: 3px;
 }
 
 main a:hover {
     text-decoration: underline;
     color: var(--cor3);
+    background-color: var(--cor1);
 }
+
+main a.interno {
+    background-color: transparent;
+    color: var(--cor4);
+    text-decoration: underline;
+}
+
+main a.interno:hover {
+    color: var(--cor3);
+    background-color: transparent;
+}
+
 
 main img {
     width: 100%;
+    margin: 15px 0;
+    display: block;
 }
+
 main img.pequena {
     max-width: 350px;
     display: block;
-    margin: auto;
+    margin: 15px auto;
+}
+
+main img.media {
+    max-width: 700px;
+    display: block;
+    margin: 15px auto;
 }
 
 div.video {
     background-color: var(--cor0);
     margin: 0 -20px 30px -20px;
     padding: 20px;
-    padding-bottom: 56.5%;
+    padding-bottom: 56.25%;
+    /* Padrão 16:9 para vídeos (315/560 = 0.5625) */
     position: relative;
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra interna para destaque */
 }
 
-div.video > iframe {
+div.video>iframe {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 50%;
+    left: 50%;
     width: 90%;
     height: 90%;
+    transform: translate(-50%, -50%);
+    /* Centraliza o iframe perfeitamente */
 }
 
 aside {
     background-color: var(--cor0);
     padding: 10px;
     border-radius: 10px;
+    margin-top: 35px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-aside > h3 {
+aside>h3 {
     background-color: var(--cor3);
     color: white;
     padding: 10px;
-    margin: -10px -10px 0 -10px;
+    margin: -10px -10px 10px -10px;
     border-radius: 10px 10px 0 0;
-    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.494);
+    box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-aside > ul {
+aside>ul {
     list-style: '\2705\00a0';
     list-style-position: inside;
-    columns: 2;
+    columns: 1;
+    padding-left: 10px;
+}
+
+aside>ul li {
+    margin-bottom: 5px;
+}
+
+aside p {
+    text-indent: 0px;
+    margin: 10px 0;
 }
 
 footer {
     background-color: var(--cor5);
     color: white;
     text-align: center;
-    font-size: 0.8;
+    font-size: 0.9em;
     padding: 20px;
 }
 
 footer a {
-    color: white;
+    color: var(--cor2);
     font-weight: bold;
     text-decoration: none;
 }
