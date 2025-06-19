@@ -33,10 +33,17 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 body {
     background-color: var(--cor1);
     font-family: var(--fonte-padrao);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a.externo::after {
@@ -50,6 +57,7 @@ header {
     min-height: 180px;
     text-align: center;
     padding-top: 50px;
+    width: 100%;
 
 }
 
@@ -79,6 +87,7 @@ nav {
     /* Azul muito escuro */
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.4);
+    width: 100%;
 }
 
 nav>a {
@@ -110,7 +119,7 @@ main {
     /* Sombra mais suave */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
+    flex-grow: 1;
 }
 
 main h1 {
@@ -137,7 +146,7 @@ main h2 {
 
 
 main h3 {
-    font-family: var(--fonte-padrao);
+    font-family: var(--fonte-titulos-secundarios);
     color: var(--cor5);
     font-size: 1.3em;
     margin-top: 30px;
@@ -189,7 +198,8 @@ main a.interno:hover {
 
 
 main img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     margin: 15px 0;
     display: block;
 }
@@ -208,7 +218,7 @@ main img.media {
 
 div.video {
     background-color: var(--cor0);
-    margin: 0 -20px 30px -20px;
+    margin: 0 auto 30px auto;
     padding: 20px;
     padding-bottom: 56.25%;
     /* Padrão 16:9 para vídeos (315/560 = 0.5625) */
@@ -268,7 +278,9 @@ footer {
     text-align: center; 
     font-size: 0.95em; 
     line-height: 1.6; 
-    border-top: 1px solid var(--cor4); /* Uma linha sutil no topo para separar o rodapé do conteúdo */
+    border-top: 1px solid var(--cor4);
+    width: 100%;
+    margin-top: auto;
 }
 
 footer .footer-content {
@@ -301,4 +313,154 @@ footer .copyright {
     margin-top: 20px; 
     font-size: 0.85em; 
     opacity: 0.8; 
+}
+
+/* Media Queries */
+/* Estilo para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    header {
+        padding-top: 30px;
+        min-height: 150px;
+    }
+
+    header > h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    header > p {
+        font-size: 0.9em;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    nav {
+        padding: 8px;
+        text-align: center;
+    }
+
+    main {
+        padding: 15px;
+        min-width: unset; /* Remove min-width para permitir que o main encolha mais */
+    }
+
+    main h1 {
+        font-size: 1.6em;
+    }
+
+    main h2 {
+        font-size: 1.3em;
+        margin-top: 20px;
+    }
+
+    main h3 {
+        font-size: 1.1em;
+        margin-top: 20px;
+    }
+
+    main p {
+        font-size: 0.95em;
+        line-height: 1.5em;
+        text-indent: 15px; /* Reduz a indentação */
+    }
+
+    main a {
+        padding: 1px 3px;
+    }
+
+    main img {
+        margin: 10px auto;
+    }
+
+    main img.pequena {
+        max-width: 100%;
+    }
+
+     div.video {
+        margin: 0 -20px 30px -20px;
+        
+    }
+    
+    aside {
+        padding:  10px;
+        margin-top: 20px;
+    }
+
+    aside > h3 {
+        padding: 8px;
+        margin: -10px -10px 10px -10px;
+    }
+
+    footer {
+        padding: 25px 15px;
+        font-size: 0.85em;
+    }
+
+    footer p {
+        margin-bottom: 8px;
+    }
+
+    footer .copyright {
+        margin-top: 15px;
+    }
+}
+
+/* Estilos para tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header > h1 {
+        font-size: 2.8em;
+    }
+
+    header > p {
+        font-size: 1.1em;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    nav {
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav > a {
+        padding: 8px 15px;
+    }
+
+    main {
+        padding: 20px;
+        max-width: 760px;
+    }
+
+    main h1 {
+        font-size: 1.9em;
+    }
+
+    main h2 {
+        font-size: 1.4em;
+    }
+
+    main h3 {
+        font-size: 1.15em;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+
+    div.video {
+        margin: 0 -20px 30px -20px;
+        
+    }
+
+    aside {
+        padding: 15px;
+    }
+
+    aside > h3 {
+        padding: 10px;
+        margin: -15px -15px 15px -15px;
+    } 
+
+    
 }
