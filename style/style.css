@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-/* Importa uma fonte moderna e limpa para títulos, ou você pode manter Bebas Neue */
 
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap');
 
 :root {
-    /* Nova paleta de cores inspirada em IA / Google: tons de azul, roxo, cinza */
+    /* Paleta de cores inspirada em IA / Google: tons de azul, roxo, cinza */
     --cor0: #e3e8f8;
     /* Azul muito claro / quase branco (fundo de seções) */
     --cor1: #bccae9;
@@ -33,7 +32,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
     width: 100%;
 }
@@ -42,8 +42,6 @@ body {
     background-color: var(--cor1);
     font-family: var(--fonte-padrao);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 a.externo::after {
@@ -84,10 +82,11 @@ header>p {
 
 nav {
     background-color: var(--cor5);
-    /* Azul muito escuro */
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.4);
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav>a {
@@ -109,25 +108,22 @@ nav>a:hover {
 }
 
 main {
-    min-width: 300px;
-    max-width: 1220px;
+    max-width: 1400px;
     margin: auto;
-    margin-bottom: 30px;
-    padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     /* Sombra mais suave */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    flex-grow: 1;
 }
 
 main h1 {
     color: var(--cor5);
     font-family: var(--fonte-titulos-secundarios);
     font-weight: normal;
-    font-size: 2.2em;
-    margin-bottom: 15px;
+    font-size: 2.5em;
+    text-align: center;
+    padding: 20px;
 }
 
 main h2 {
@@ -138,7 +134,7 @@ main h2 {
     font-size: 1.6em;
     /* Tamanho ajustado */
     background-image: linear-gradient(to right, var(--cor0), transparent);
-    padding-left: 8px;
+    padding-left: 30px;
     margin-top: 30px;
     margin-bottom: 10px;
     /* Espaço depois do título */
@@ -148,18 +144,18 @@ main h2 {
 main h3 {
     font-family: var(--fonte-titulos-secundarios);
     color: var(--cor5);
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-top: 30px;
-    margin-bottom: 10px;
-    text-decoration: underline;
+    padding-left: 10px;
 }
 
 main p {
-    margin: 15px 0px;
+    padding: 18px;
     text-align: justify;
-    text-indent: 30px;
-    font-size: 1.1em;
+    text-indent: 20px;
+    font-size: 1.3em;
     line-height: 1.8em;
+
 }
 
 main strong {
@@ -188,7 +184,7 @@ main a:hover {
 main a.interno {
     background-color: transparent;
     color: var(--cor4);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 main a.interno:hover {
@@ -198,33 +194,17 @@ main a.interno:hover {
 
 
 main img {
-    max-width: 100%;
+    width: 90%;
     height: auto;
-    margin: 15px 0;
+    margin: 25px auto;
     display: block;
-}
-
-main img.pequena {
-    max-width: 350px;
-    display: block;
-    margin: 15px auto;
-}
-
-main img.media {
-    max-width: 700px;
-    display: block;
-    margin: 15px auto;
 }
 
 div.video {
     background-color: var(--cor0);
-    margin: 0 auto 30px auto;
     padding: 20px;
     padding-bottom: 56.25%;
-    /* Padrão 16:9 para vídeos (315/560 = 0.5625) */
     position: relative;
-    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
-    /* Sombra interna para destaque */
 }
 
 div.video>iframe {
@@ -240,9 +220,12 @@ div.video>iframe {
 aside {
     background-color: var(--cor0);
     padding: 10px;
-    border-radius: 10px;
-    margin-top: 35px;
+    margin: 10px -1px;
+    text-decoration: none;
+    border-radius: 5px 5px 0 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
 }
 
 aside>h3 {
@@ -264,6 +247,7 @@ aside>ul {
 
 aside>ul li {
     margin-bottom: 15px;
+    font-size: 1.1em;
 }
 
 aside p {
@@ -272,47 +256,47 @@ aside p {
 }
 
 footer {
-    background-color: var(--cor5); 
+    background-color: var(--cor5);
     color: white;
-    padding: 30px 20px; 
-    text-align: center; 
-    font-size: 0.95em; 
-    line-height: 1.6; 
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 0.95em;
+    line-height: 1.6;
     border-top: 1px solid var(--cor4);
     width: 100%;
     margin-top: auto;
 }
 
 footer .footer-content {
-    max-width: 900px; 
-    margin: auto; /* Centraliza o conteúdo */
+    max-width: 900px;
+    margin: auto;
 }
 
 footer p {
-    margin-bottom: 10px; 
-    text-indent: 0; /* Garante que não haja indentação nos parágrafos do rodapé */
+    margin-bottom: 10px;
 }
 
 footer p:last-child {
-    margin-bottom: 0; /* Remove a margem do último parágrafo */
+    margin-bottom: 0;
+    /* Remove a margem do último parágrafo */
 }
 
 footer a {
-    color: var(--cor2); 
+    color: var(--cor2);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 footer a:hover {
-    color: var(--cor1); 
-    text-decoration: underline; 
+    color: var(--cor1);
+    text-decoration: underline;
 }
 
 footer .copyright {
-    margin-top: 20px; 
-    font-size: 0.85em; 
-    opacity: 0.8; 
+    margin-top: 20px;
+    font-size: 0.85em;
+    opacity: 0.8;
 }
 
 /* Media Queries */
@@ -323,12 +307,12 @@ footer .copyright {
         min-height: 150px;
     }
 
-    header > h1 {
-        font-size: 2em;
+    header>h1 {
+        font-size: 1.6em;
         margin-bottom: 10px;
     }
 
-    header > p {
+    header>p {
         font-size: 0.9em;
         padding-bottom: 20px;
         padding-left: 10px;
@@ -338,31 +322,34 @@ footer .copyright {
     nav {
         padding: 8px;
         text-align: center;
+        font-size: 0.8em;
     }
 
     main {
-        padding: 15px;
-        min-width: unset; /* Remove min-width para permitir que o main encolha mais */
+        padding: 10px;
+        min-width: unset;
+        /* Remove min-width para permitir que o main encolha mais */
     }
 
     main h1 {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
 
     main h2 {
-        font-size: 1.3em;
+        font-size: 1.2em;
         margin-top: 20px;
     }
 
     main h3 {
-        font-size: 1.1em;
+        font-size: 1em;
         margin-top: 20px;
     }
 
     main p {
-        font-size: 0.95em;
+        font-size: 0.96em;
         line-height: 1.5em;
-        text-indent: 15px; /* Reduz a indentação */
+        text-indent: 15px;
+        /* Reduz a indentação */
     }
 
     main a {
@@ -370,49 +357,51 @@ footer .copyright {
     }
 
     main img {
+        width: 100%;
         margin: 10px auto;
     }
 
-    main img.pequena {
-        max-width: 100%;
+    div.video {
+        margin: 0 -20px 30px -20px;
+
     }
 
-     div.video {
-        margin: 0 -20px 30px -20px;
-        
-    }
-    
     aside {
-        padding:  10px;
+        padding: 10px;
         margin-top: 20px;
     }
 
-    aside > h3 {
+    aside>h3 {
         padding: 8px;
         margin: -10px -10px 10px -10px;
     }
 
+    aside>ul li {
+        font-size: 0.85em;
+    }
+
     footer {
         padding: 25px 15px;
-        font-size: 0.85em;
     }
 
     footer p {
         margin-bottom: 8px;
+        font-size: 0.70em;
     }
 
     footer .copyright {
         margin-top: 15px;
+        font-size: 0.65em;
     }
 }
 
 /* Estilos para tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    header > h1 {
+    header>h1 {
         font-size: 2.8em;
     }
 
-    header > p {
+    header>p {
         font-size: 1.1em;
         padding-left: 15px;
         padding-right: 15px;
@@ -423,7 +412,7 @@ footer .copyright {
         padding: 10px;
     }
 
-    nav > a {
+    nav>a {
         padding: 8px 15px;
     }
 
@@ -445,22 +434,30 @@ footer .copyright {
     }
 
     main p {
-        font-size: 1em;
+        font-size: 1.1em;
+    }
+
+    main img {
+        width: 95%;
+        margin: 10px auto;
     }
 
     div.video {
         margin: 0 -20px 30px -20px;
-        
+
     }
 
     aside {
         padding: 15px;
     }
 
-    aside > h3 {
+    aside>h3 {
         padding: 10px;
-        margin: -15px -15px 15px -15px;
-    } 
+        margin: -12px -12px 12px -12px;
+    }
 
-    
+     aside>ul li {
+        font-size: 1em;
+    }
+
 }
