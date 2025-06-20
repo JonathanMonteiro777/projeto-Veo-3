@@ -10,6 +10,14 @@ Este projeto serve como um exemplo prático de desenvolvimento web responsivo e 
 
 ---
 
+## Visualização do Projeto
+Aqui está uma prévia do projeto em ação:
+
+![Captura de tela da página principal do projeto Google Veo 3](assets/imagens/preview.jpeg)
+
+
+---
+
 ## Tecnologias Utilizadas
 
 * **HTML5:** Estruturação semântica do conteúdo.
